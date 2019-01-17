@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.meko.mapper.ItemsMapperCustom" >
+
+    <sql id="query_items_where">
+        <if test="itemsCustom!=null and itemsCustom.name!=''">
+            items.name LIKE '%${itemsCustom.name}%'
+        </if>
+    </sql>
+
+
+    <!--商品查询
+        parameterType：传入包装对象
+        resultType：建议使用扩展对象-->
+    <select id="findItemsListByLike" parameterType="cn.meko.custom.ItemsQueryVo" resultType="cn.meko.custom.ItemsCustom">
+        SELECT * FROM items
+        <where>
+            <include refid="query_items_where"/>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,11 @@
+-- auto Generated on 2019-01-14
+-- DROP TABLE IF EXISTS student;
+CREATE TABLE student(
+	id INT (11) NOT NULL AUTO_INCREMENT COMMENT '主键
+    * 
+    * isNullAble:0',
+	name VARCHAR (50) NOT NULL DEFAULT '' COMMENT 'isNullAble:1',
+	age INT (11) NOT NULL DEFAULT -1 COMMENT 'isNullAble:1',
+	birthday DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00' COMMENT 'isNullAble:1',
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'student';

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis全局配置文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<properties resource="db.properties"/>-->
+
+    <!--<settings>-->
+        <!--&lt;!&ndash;打开延迟加载开关-->
+            <!--将积极加载改为消极加载，即按需加载&ndash;&gt;-->
+        <!--<setting name="lazyLoadingEnabled" value="true"/>-->
+        <!--<setting name="aggressiveLazyLoading" value="true"/>-->
+    <!--</settings>-->
+
+    <typeAliases>
+        <!--单个别名的定义-->
+        <!--<typeAlias type="cn.meko.po.User" alias="user"/>-->
+
+        <!--批量别名：指定包，mybatis自动扫描包中的类。自动定义别名，别名就是类明（首字母大小写都可以） 【这个比较常用】  -->
+
+        <package name="cn.meko.po"/>
+        <package name="cn.meko.custom"/>
+    </typeAliases>
+
+
+    <!--由于使用spring和mybatis整合包进行mapper扫描，所以这里就不用配置了
+        但是必须遵循需要讲mapper接口的类名和mapper.xml文件名称保持一致，且在一个目录中-->
+
+</configuration>
